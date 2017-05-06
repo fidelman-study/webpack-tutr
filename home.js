@@ -2,6 +2,6 @@
 
 let welcome = require('./welcome');
 
-welcome('home');
+welcome('hello');
 
 exports.welcome = welcome;

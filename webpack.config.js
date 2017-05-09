@@ -8,6 +8,7 @@ module.exports = {
     entry: {
         home: './home',
         about: './about',
+        welcome: './welcome'
     },
     output: {
         path: __dirname + '/public',
@@ -19,9 +20,10 @@ module.exports = {
         aggregateTimeout: 100
     },
     devtool: NODE_ENV === 'development' ? 'source-map' : false,
-    plugins: [ // needs local webpack, pass vars to app
+    plugins: [ // needs local webpack
+        new webpack.NoEmitOnErrorsPlugin(), // Stop if error
         //new webpack.EnvironmentPlugin('NODE_ENV') // always set NODE_ENV
-        new webpack.DefinePlugin({
+        new webpack.DefinePlugin({ // pass vars to app
             NODE_ENV: JSON.stringify(NODE_ENV) // will be NODE_ENV in app, always JSON.stringify
         }) // not always set NODE_ENV
     ],

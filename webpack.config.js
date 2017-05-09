@@ -21,13 +21,24 @@ module.exports = {
         }) // not always set NODE_ENV
     ],
 
+    resolve: { // where to find files
+        modules: ['node_modules'],
+        extensions: ['.js']
+    },
+
+    resolveLoader: { // where to find loader
+        modules: ['node_modules'],
+        extensions: ['.js'],
+        moduleExtensions: ['-loader']
+    },
+
     module: {
         rules: [
             {
                 test: /\.js$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
-                    loader: 'babel-loader',
+                    loader: 'babel',
                     options: {
                         presets: ['env']
                     }

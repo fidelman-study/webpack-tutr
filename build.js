@@ -74,8 +74,12 @@ var home =
 "use strict";
 
 
-module.exports = function(message) {
-    alert(`Welcome ${message}`);
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+exports.default = function (message) {
+    alert('Welcome ' + message);
 };
 
 /***/ }),
@@ -85,11 +89,13 @@ module.exports = function(message) {
 "use strict";
 
 
-let welcome = __webpack_require__(0);
+var _welcome = __webpack_require__(0);
 
-welcome('hello');
+var _welcome2 = _interopRequireDefault(_welcome);
 
-exports.welcome = welcome;
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+(0, _welcome2.default)('hello');
 
 /***/ })
 /******/ ]);

@@ -1,7 +1,2 @@
-'use strict';
-
-let welcome = require('./welcome');
-
+import welcome from './welcome';
 welcome('hello');
-
-exports.welcome = welcome;
